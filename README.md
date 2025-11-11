@@ -1,0 +1,312 @@
+# Markdownlint Shared Configurations
+
+A collection of reusable [markdownlint](https://github.com/DavidAnson/markdownlint) base configurations for different use cases and project types.
+
+## Available Configurations
+
+### 🎯 strict.json
+
+**Recommended for:** New projects, libraries, technical documentation requiring high consistency.
+
+Enables all rules with strict settings for maximum consistency and quality. Enforces:
+
+- 80-character line length limit
+- ATX-style headings (`#`)
+- Dash-style unordered lists (`-`)
+- 2-space list indentation
+- Backtick code fences
+- Asterisk emphasis/strong
+- Consistent horizontal rule style (`---`)
+
+**Usage:**
+
+```json
+{
+  "extends": "path/to/strict.json"
+}
+```
+
+### 🌊 relaxed.json
+
+**Recommended for:** READMEs, personal projects, quick documentation.
+
+Enables all rules but disables the most commonly problematic ones:
+
+- No line length limit (MD013)
+- Allows duplicate headings in different sections (MD024/siblings_only)
+- Allows inline HTML (MD033)
+- Allows bare URLs (MD034)
+- Allows emphasis as heading replacement (MD036)
+- Doesn't require first line to be heading (MD041)
+
+**Usage:**
+
+```json
+{
+  "extends": "path/to/relaxed.json"
+}
+```
+
+### 🎨 style-guide.json
+
+**Recommended for:** Teams establishing style guidelines, enforcing consistency.
+
+Focuses on style consistency rather than strictness. Uses "consistent" settings where possible, allowing teams to choose their own style while enforcing consistency:
+
+- Consistent heading, list, code fence, and emphasis styles
+- Proper whitespace and indentation rules
+- No line length limit
+- Allows duplicate headings in siblings
+
+**Usage:**
+
+```json
+{
+  "extends": "path/to/style-guide.json"
+}
+```
+
+### 🐙 github-flavored.json
+
+**Recommended for:** GitHub repositories, projects using GitHub-flavored Markdown features.
+
+Optimized for GitHub's Markdown rendering with:
+
+- 120-character line length (comfortable for GitHub UI)
+- Allows common GitHub HTML elements (details, summary, kbd, etc.)
+- Fenced code blocks with backticks
+- ATX-style headings
+- Dash-style lists
+
+**Usage:**
+
+```json
+{
+  "extends": "path/to/github-flavored.json"
+}
+```
+
+### 📚 documentation.json
+
+**Recommended for:** Documentation sites, wikis, knowledge bases, technical writing.
+
+Balanced configuration for documentation projects:
+
+- No line length limit (docs often have long paragraphs)
+- Allows inline HTML for rich formatting
+- Supports front matter titles
+- Doesn't enforce strict duplicate heading rules
+- Allows documents without top-level heading
+- Consistent code and emphasis styles
+
+**Usage:**
+
+```json
+{
+  "extends": "path/to/documentation.json"
+}
+```
+
+## Installation & Usage
+
+### With markdownlint-cli2
+
+1. **Install markdownlint-cli2:**
+
+```bash
+npm install --save-dev markdownlint-cli2
+```
+
+2. **Create your config file** (`.markdownlint.json`, `.markdownlint.jsonc`, or `.markdownlint-cli2.jsonc`):
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.json"
+}
+```
+
+3. **Run linting:**
+
+```bash
+npx markdownlint-cli2 "**/*.md"
+```
+
+### With VS Code Extension
+
+1. **Install the extension:** [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+2. **Configure in `.vscode/settings.json`:**
+
+```json
+{
+  "markdownlint.config": {
+    "extends": "./path/to/strict.json"
+  }
+}
+```
+
+Or reference a config file:
+
+```json
+{
+  "markdownlint.customRules": [],
+  "markdownlint.config": {}
+}
+```
+
+And create `.markdownlint.json` in your project root:
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/github-flavored.json"
+}
+```
+
+### Direct File Copy
+
+You can also copy any configuration file directly to your project:
+
+```bash
+cp strict.json .markdownlint.json
+```
+
+## Extending Configurations
+
+All configurations can be extended and customized:
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "MD013": {
+    "line_length": 100
+  },
+  "MD033": {
+    "allowed_elements": ["br", "img"]
+  }
+}
+```
+
+## Multiple Configuration Inheritance
+
+You can extend multiple configurations (later ones override earlier ones):
+
+```json
+{
+  "extends": [
+    "./node_modules/@your-org/config-markdownlint/strict.json",
+    "./custom-overrides.json"
+  ]
+}
+```
+
+## Choosing the Right Configuration
+
+| Project Type | Recommended Config | Why |
+|--------------|-------------------|-----|
+| New library/package | `strict.json` | Establishes high quality standards from the start |
+| README only | `relaxed.json` | Less friction for quick documentation |
+| GitHub project | `github-flavored.json` | Optimized for GitHub's Markdown rendering |
+| Documentation site | `documentation.json` | Balanced for long-form technical writing |
+| Team style guide | `style-guide.json` | Enforces consistency while allowing team preferences |
+
+## CI/CD Integration
+
+### GitHub Actions
+
+```yaml
+name: Lint Markdown
+
+on: [push, pull_request]
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npx markdownlint-cli2 "**/*.md"
+```
+
+### Pre-commit Hook (with husky + lint-staged)
+
+**package.json:**
+
+```json
+{
+  "lint-staged": {
+    "*.md": "markdownlint-cli2"
+  }
+}
+```
+
+**.husky/pre-commit:**
+
+```bash
+#!/bin/sh
+npx lint-staged
+```
+
+## Common Overrides
+
+### Allow Longer Lines
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "MD013": {
+    "line_length": 120
+  }
+}
+```
+
+### Allow Specific HTML Elements
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "MD033": {
+    "allowed_elements": ["br", "details", "summary"]
+  }
+}
+```
+
+### Disable Specific Rules
+
+```json
+{
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "MD041": false,
+  "MD013": false
+}
+```
+
+## Inline Rule Control
+
+You can temporarily disable rules in your Markdown files:
+
+```markdown
+<!-- markdownlint-disable MD013 -->
+This line can be as long as you want without triggering the line length rule.
+<!-- markdownlint-enable MD013 -->
+
+<!-- markdownlint-disable-next-line MD033 -->
+<div>This HTML is allowed</div>
+```
+
+## Contributing
+
+Suggestions for new configurations or improvements to existing ones are welcome!
+
+## License
+
+MIT
+
+## Resources
+
+- [markdownlint repository](https://github.com/DavidAnson/markdownlint)
+- [Rules reference](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
+- [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+- [VS Code extension](https://github.com/DavidAnson/vscode-markdownlint)
