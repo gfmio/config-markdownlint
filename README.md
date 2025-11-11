@@ -4,7 +4,7 @@ A collection of reusable [markdownlint](https://github.com/DavidAnson/markdownli
 
 ## Available Configurations
 
-### 🎯 strict.json
+### 🎯 strict.jsonc
 
 **Recommended for:** New projects, libraries, technical documentation requiring high consistency.
 
@@ -22,11 +22,11 @@ Enables all rules with strict settings for maximum consistency and quality. Enfo
 
 ```json
 {
-  "extends": "path/to/strict.json"
+  "extends": "path/to/strict.jsonc"
 }
 ```
 
-### 🌊 relaxed.json
+### 🌊 relaxed.jsonc
 
 **Recommended for:** READMEs, personal projects, quick documentation.
 
@@ -43,11 +43,11 @@ Enables all rules but disables the most commonly problematic ones:
 
 ```json
 {
-  "extends": "path/to/relaxed.json"
+  "extends": "path/to/relaxed.jsonc"
 }
 ```
 
-### 🎨 style-guide.json
+### 🎨 style-guide.jsonc
 
 **Recommended for:** Teams establishing style guidelines, enforcing consistency.
 
@@ -62,11 +62,11 @@ Focuses on style consistency rather than strictness. Uses "consistent" settings 
 
 ```json
 {
-  "extends": "path/to/style-guide.json"
+  "extends": "path/to/style-guide.jsonc"
 }
 ```
 
-### 🐙 github-flavored.json
+### 🐙 github-flavored.jsonc
 
 **Recommended for:** GitHub repositories, projects using GitHub-flavored Markdown features.
 
@@ -82,11 +82,11 @@ Optimized for GitHub's Markdown rendering with:
 
 ```json
 {
-  "extends": "path/to/github-flavored.json"
+  "extends": "path/to/github-flavored.jsonc"
 }
 ```
 
-### 📚 documentation.json
+### 📚 documentation.jsonc
 
 **Recommended for:** Documentation sites, wikis, knowledge bases, technical writing.
 
@@ -103,7 +103,7 @@ Balanced configuration for documentation projects:
 
 ```json
 {
-  "extends": "path/to/documentation.json"
+  "extends": "path/to/documentation.jsonc"
 }
 ```
 
@@ -121,7 +121,7 @@ npm install --save-dev markdownlint-cli2
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/strict.json"
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.jsonc"
 }
 ```
 
@@ -140,7 +140,7 @@ npx markdownlint-cli2 "**/*.md"
 ```json
 {
   "markdownlint.config": {
-    "extends": "./path/to/strict.json"
+    "extends": "./path/to/strict.jsonc"
   }
 }
 ```
@@ -154,11 +154,11 @@ Or reference a config file:
 }
 ```
 
-And create `.markdownlint.json` in your project root:
+And create `.markdownlint.jsonc` in your project root:
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/github-flavored.json"
+  "extends": "./node_modules/@your-org/config-markdownlint/github-flavored.jsonc"
 }
 ```
 
@@ -167,7 +167,7 @@ And create `.markdownlint.json` in your project root:
 You can also copy any configuration file directly to your project:
 
 ```bash
-cp strict.json .markdownlint.json
+cp strict.jsonc .markdownlint.jsonc
 ```
 
 ## Extending Configurations
@@ -176,7 +176,7 @@ All configurations can be extended and customized:
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.jsonc",
   "MD013": {
     "line_length": 100
   },
@@ -193,8 +193,8 @@ You can extend multiple configurations (later ones override earlier ones):
 ```json
 {
   "extends": [
-    "./node_modules/@your-org/config-markdownlint/strict.json",
-    "./custom-overrides.json"
+    "./node_modules/@your-org/config-markdownlint/strict.jsonc",
+    "./custom-overrides.jsonc"
   ]
 }
 ```
@@ -203,11 +203,11 @@ You can extend multiple configurations (later ones override earlier ones):
 
 | Project Type | Recommended Config | Why |
 |--------------|-------------------|-----|
-| New library/package | `strict.json` | Establishes high quality standards from the start |
-| README only | `relaxed.json` | Less friction for quick documentation |
-| GitHub project | `github-flavored.json` | Optimized for GitHub's Markdown rendering |
-| Documentation site | `documentation.json` | Balanced for long-form technical writing |
-| Team style guide | `style-guide.json` | Enforces consistency while allowing team preferences |
+| New library/package | `strict.jsonc` | Establishes high quality standards from the start |
+| README only | `relaxed.jsonc` | Less friction for quick documentation |
+| GitHub project | `github-flavored.jsonc` | Optimized for GitHub's Markdown rendering |
+| Documentation site | `documentation.jsonc` | Balanced for long-form technical writing |
+| Team style guide | `style-guide.jsonc` | Enforces consistency while allowing team preferences |
 
 ## CI/CD Integration
 
@@ -255,7 +255,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.jsonc",
   "MD013": {
     "line_length": 120
   }
@@ -266,7 +266,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.jsonc",
   "MD033": {
     "allowed_elements": ["br", "details", "summary"]
   }
@@ -277,7 +277,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@your-org/config-markdownlint/strict.json",
+  "extends": "./node_modules/@your-org/config-markdownlint/strict.jsonc",
   "MD041": false,
   "MD013": false
 }
