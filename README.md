@@ -302,7 +302,7 @@ Suggestions for new configurations or improvements to existing ones are welcome!
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 ## Resources
 
