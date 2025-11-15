@@ -5,81 +5,101 @@
   "default": true,
 
   // MD003/heading-style: Use ATX-style headings (##) - GitHub standard
-  "MD003": { "style": "atx" },
+  "MD003": {
+    "style": "atx"
+  },
 
   // MD004/ul-style: Use dash (-) for unordered lists - GitHub standard
-  "MD004": { "style": "dash" },
+  "MD004": {
+    "style": "dash"
+  },
 
   // MD007/ul-indent: Use 2-space indentation for nested lists
-  "MD007": { "indent": 2 },
+  "MD007": {
+    "indent": 2
+  },
 
   // MD013/line-length: 120 characters is comfortable for GitHub's UI
   "MD013": {
-    "line_length": 120,
-    "heading_line_length": 120,
     "code_block_line_length": 120,
     "code_blocks": true,
-    "tables": false,  // Tables often exceed line length; GitHub handles them well
+    "heading_line_length": 120,
     "headings": true,
+    "line_length": 120,
+    "stern": false,
     "strict": false,
-    "stern": false
+    "tables": false // Tables often exceed line length; GitHub handles them well
   },
 
   // MD014/commands-show-output: Allow $ before commands (common in GitHub docs)
   "MD014": false,
 
   // MD024/no-duplicate-heading: Allow duplicate headings in different sections
-  "MD024": { "siblings_only": true },
+  "MD024": {
+    "siblings_only": true
+  },
 
   // MD029/ol-prefix: Allow either "1." for all items or sequential numbering
-  "MD029": { "style": "one_or_ordered" },
+  "MD029": {
+    "style": "one_or_ordered"
+  },
 
   // MD033/no-inline-html: Allow common GitHub-flavored HTML elements
   "MD033": {
     "allowed_elements": [
-      "a",           // Links with specific attributes
-      "br",          // Line breaks
-      "del",         // Strikethrough (alternative to ~~)
-      "details",     // Collapsible sections
-      "div",         // Container for alignment/styling
-      "img",         // Images with specific attributes
-      "ins",         // Insertions/additions
-      "kbd",         // Keyboard input styling
-      "picture",     // Responsive images
-      "source",      // Used with <picture>
-      "sub",         // Subscript
-      "summary",     // Summary for <details>
-      "sup",         // Superscript
-      "table",       // Tables with specific styling
-      "tbody",       // Table body
-      "td",          // Table cell
-      "th",          // Table header
-      "thead",       // Table header section
-      "tr"           // Table row
+      "a", // Links with specific attributes
+      "br", // Line breaks
+      "del", // Strikethrough (alternative to ~~)
+      "details", // Collapsible sections
+      "div", // Container for alignment/styling
+      "img", // Images with specific attributes
+      "ins", // Insertions/additions
+      "kbd", // Keyboard input styling
+      "picture", // Responsive images
+      "source", // Used with <picture>
+      "sub", // Subscript
+      "summary", // Summary for <details>
+      "sup", // Superscript
+      "table", // Tables with specific styling
+      "tbody", // Table body
+      "td", // Table cell
+      "th", // Table header
+      "thead", // Table header section
+      "tr" // Table row
     ]
   },
 
   // MD035/hr-style: Use "---" for horizontal rules - GitHub standard
-  "MD035": { "style": "---" },
+  "MD035": {
+    "style": "---"
+  },
 
   // MD040/fenced-code-language: Encourage (but don't require) language specification
   "MD040": {
-    "allowed_languages": [],  // Allow any language
-    "language_only": false    // Allow info strings for additional context
+    "allowed_languages": [], // Allow any language
+    "language_only": false // Allow info strings for additional context
   },
 
   // MD044/proper-names: Disable by default (enable per-project if needed)
   "MD044": false,
 
   // MD046/code-block-style: Use fenced code blocks - GitHub standard
-  "MD046": { "style": "fenced" },
+  "MD046": {
+    "style": "fenced"
+  },
 
   // MD048/code-fence-style: Use backticks (```) - GitHub standard
-  "MD048": { "style": "backtick" },
+  "MD048": {
+    "style": "backtick"
+  },
 
   // MD049/emphasis-style: Use asterisks (*) for italics
-  "MD049": { "style": "asterisk" },
+  "MD049": {
+    "style": "asterisk"
+  },
 
   // MD050/strong-style: Use asterisks (**) for bold
-  "MD050": { "style": "asterisk" }
+  "MD050": {
+    "style": "asterisk"
+  }
 }

@@ -13,7 +13,9 @@
   "MD014": false,
 
   // MD024/no-duplicate-heading: Allow duplicate headings in different sections
-  "MD024": { "siblings_only": true },
+  "MD024": {
+    "siblings_only": true
+  },
 
   // MD033/no-inline-html: Allow any inline HTML
   // Useful for quick formatting or features not available in Markdown
