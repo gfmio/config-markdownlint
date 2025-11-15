@@ -5,7 +5,7 @@
     "": {
       "name": "@gfmio/config-markdownlint",
       "devDependencies": {
-        "@biomejs/biome": "^2.3.2",
+        "@biomejs/biome": "^2.3.5",
         "@commitlint/cli": "^20.1.0",
         "@commitlint/config-conventional": "^20.0.0",
         "@gfmio/config-biome": "^1.0.2",
