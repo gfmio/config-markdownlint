@@ -16,7 +16,9 @@
 
   // MD007/ul-indent: Use 2-space indentation for nested lists
   "MD007": {
-    "indent": 2
+    "indent": 2,
+    "start_indent": 2,
+    "start_indented": false
   },
 
   // MD013/line-length: Enforce 80-character line length for readability
