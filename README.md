@@ -22,7 +22,7 @@ Enables all rules with strict settings for maximum consistency and quality. Enfo
 
 ```json
 {
-  "extends": "path/to/strict.jsonc"
+  "extends": "@gfmio/config-markdownlint/strict.jsonc"
 }
 ```
 
@@ -43,7 +43,7 @@ Enables all rules but disables the most commonly problematic ones:
 
 ```json
 {
-  "extends": "path/to/relaxed.jsonc"
+  "extends": "@gfmio/config-markdownlint/relaxed.jsonc"
 }
 ```
 
@@ -62,7 +62,7 @@ Focuses on style consistency rather than strictness. Uses "consistent" settings 
 
 ```json
 {
-  "extends": "path/to/style-guide.jsonc"
+  "extends": "@gfmio/config-markdownlint/style-guide.jsonc"
 }
 ```
 
@@ -82,7 +82,7 @@ Optimized for GitHub's Markdown rendering with:
 
 ```json
 {
-  "extends": "path/to/github-flavored.jsonc"
+  "extends": "@gfmio/config-markdownlint/github-flavored.jsonc"
 }
 ```
 
@@ -103,7 +103,7 @@ Balanced configuration for documentation projects:
 
 ```json
 {
-  "extends": "path/to/documentation.jsonc"
+  "extends": "@gfmio/config-markdownlint/documentation.jsonc"
 }
 ```
 
