@@ -121,7 +121,7 @@ npm install --save-dev markdownlint-cli2
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/strict.jsonc"
+  "extends": "@gfmio/config-markdownlint/strict.jsonc"
 }
 ```
 
@@ -140,7 +140,7 @@ npx markdownlint-cli2 "**/*.md"
 ```json
 {
   "markdownlint.config": {
-    "extends": "./path/to/strict.jsonc"
+    "extends": "@gfmio/config-markdownlint/strict.jsonc"
   }
 }
 ```
@@ -158,7 +158,7 @@ And create `.markdownlint.jsonc` in your project root:
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/github-flavored.jsonc"
+  "extends": "@gfmio/config-markdownlint/github-flavored.jsonc"
 }
 ```
 
@@ -176,7 +176,7 @@ All configurations can be extended and customized:
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/strict.jsonc",
+  "extends": "@gfmio/config-markdownlint/strict.jsonc",
   "MD013": {
     "line_length": 100
   },
@@ -193,7 +193,7 @@ You can extend multiple configurations (later ones override earlier ones):
 ```json
 {
   "extends": [
-    "./node_modules/@gfmio/config-markdownlint/strict.jsonc",
+    "@gfmio/config-markdownlint/strict.jsonc",
     "./custom-overrides.jsonc"
   ]
 }
@@ -255,7 +255,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/strict.jsonc",
+  "extends": "@gfmio/config-markdownlint/strict.jsonc",
   "MD013": {
     "line_length": 120
   }
@@ -266,7 +266,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/strict.jsonc",
+  "extends": "@gfmio/config-markdownlint/strict.jsonc",
   "MD033": {
     "allowed_elements": ["br", "details", "summary"]
   }
@@ -277,7 +277,7 @@ npx lint-staged
 
 ```json
 {
-  "extends": "./node_modules/@gfmio/config-markdownlint/strict.jsonc",
+  "extends": "@gfmio/config-markdownlint/strict.jsonc",
   "MD041": false,
   "MD013": false
 }
