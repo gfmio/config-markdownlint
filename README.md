@@ -113,24 +113,8 @@ Balanced configuration for documentation projects:
 
 1. **Install markdownlint-cli2:**
 
-```bash
-npm install --save-dev markdownlint-cli2
-```
-
-2. **Create your config file** (`.markdownlint.json`, `.markdownlint.jsonc`, or `.markdownlint-cli2.jsonc`):
-
-```json
-{
-  "extends": "@gfmio/config-markdownlint/strict.jsonc"
-}
-```
-
-3. **Run linting:**
-
-```bash
-npx markdownlint-cli2 "**/*.md"
-```
-
+   ```bash
+   npm install --save-dev markdownlint-cli2
 ### With VS Code Extension
 
 1. **Install the extension:** [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
