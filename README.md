@@ -135,16 +135,10 @@ npx markdownlint-cli2 "**/*.md"
 
 1. **Install the extension:** [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
-2. **Configure in `.vscode/settings.json`:**
+2. **Install the shared config package:**
 
-```json
-{
-  "markdownlint.config": {
-    "extends": "@gfmio/config-markdownlint/strict.jsonc"
-  }
-}
-```
-
+   ```bash
+   npm install --save-dev @gfmio/config-markdownlint
 Or reference a config file:
 
 ```json
