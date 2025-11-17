@@ -1,0 +1,103 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+
+  // Enable all rules by default, optimized for documentation projects
+  "default": true,
+
+  // MD003/heading-style: Use ATX-style headings (##) for consistency
+  "MD003": {
+    "style": "atx"
+  },
+
+  // MD004/ul-style: Use dash (-) for unordered lists
+  "MD004": {
+    "style": "dash"
+  },
+
+  // MD007/ul-indent: Use 2-space indentation for nested lists
+  "MD007": {
+    "indent": 2,
+    "start_indent": 2,
+    "start_indented": false
+  },
+
+  // MD013/line-length: Disable line length restrictions
+  // Documentation often contains long paragraphs and explanatory text
+  "MD013": false,
+
+  // MD014/commands-show-output: Allow $ before commands without showing output
+  "MD014": false,
+
+  // MD024/no-duplicate-heading: Allow duplicate headings in different sections
+  // Documentation commonly reuses headings like "Examples", "Usage", etc.
+  "MD024": {
+    "siblings_only": true
+  },
+
+  // MD025/single-title: Allow front matter title as the top-level heading
+  // Many documentation systems extract title from front matter
+  "MD025": {
+    "front_matter_title": "^\\s*title\\s*[:=]",
+    "level": 1
+  },
+
+  // MD026/no-trailing-punctuation: Disallow trailing punctuation in headings
+  "MD026": {
+    "punctuation": ".,;:!。,;:!"
+  },
+
+  // MD029/ol-prefix: Allow either "1." for all items or sequential numbering
+  "MD029": {
+    "style": "one_or_ordered"
+  },
+
+  // MD033/no-inline-html: Allow HTML elements commonly used in documentation
+  "MD033": {
+    "allowed_elements": [
+      "a", // Links with specific attributes
+      "abbr", // Abbreviations with tooltips
+      "br", // Line breaks
+      "details", // Collapsible sections
+      "div", // Container for layout/styling
+      "img", // Images with specific attributes
+      "kbd", // Keyboard input styling
+      "span", // Inline styling
+      "sub", // Subscript
+      "summary", // Summary for collapsible sections
+      "sup" // Superscript
+    ]
+  },
+
+  // MD040/fenced-code-language: Encourage (but don't require) language specification
+  "MD040": {
+    "allowed_languages": [], // Allow any language
+    "language_only": false // Allow info strings for additional context
+  },
+
+  // MD041/first-line-heading: Don't require first line to be a heading
+  // Documentation pages may start with front matter or introductory text
+  "MD041": false,
+
+  // MD044/proper-names: Disable by default (enable per-project for brand names)
+  "MD044": false,
+
+  // MD046/code-block-style: Use fenced code blocks (```) instead of indented
+  "MD046": {
+    "style": "fenced"
+  },
+
+  // MD048/code-fence-style: Use backticks (```) for code fences
+  "MD048": {
+    "style": "backtick"
+  },
+
+  // MD049/emphasis-style: Use asterisks (*) for emphasis/italics
+  "MD049": {
+    "style": "asterisk"
+  },
+
+  // MD050/strong-style: Use asterisks (**) for strong/bold
+  "MD050": {
+    "style": "asterisk"
+  }
+}

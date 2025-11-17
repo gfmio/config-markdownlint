@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+
+  // Enable all rules by default, then disable the most commonly problematic ones
+  // This config prioritizes ease of writing over strict adherence
+  "default": true,
+
+  // MD013/line-length: Disable line length restrictions
+  // Allow natural paragraph flow without arbitrary breaking
+  "MD013": false,
+
+  // MD014/commands-show-output: Allow $ before commands without showing output
+  "MD014": false,
+
+  // MD024/no-duplicate-heading: Allow duplicate headings in different sections
+  "MD024": {
+    "siblings_only": true
+  },
+
+  // MD033/no-inline-html: Allow any inline HTML
+  // Useful for quick formatting or features not available in Markdown
+  "MD033": false,
+
+  // MD034/no-bare-urls: Allow bare URLs without angle brackets or link syntax
+  // Convenient for quick documentation and notes
+  "MD034": false,
+
+  // MD036/no-emphasis-as-heading: Allow emphasis instead of proper headings
+  // Sometimes useful for styling purposes
+  "MD036": false,
+
+  // MD041/first-line-heading: Don't require first line to be a heading
+  // READMEs and other docs often start with badges or intro text
+  "MD041": false,
+
+  // MD044/proper-names: Disable proper name capitalization enforcement
+  "MD044": false
+}

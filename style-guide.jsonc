@@ -1,0 +1,126 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+
+  // Enable all rules by default, focusing on style consistency
+  // This config uses "consistent" where possible to enforce uniformity
+  // without being prescriptive about which specific style to use
+  "default": true,
+
+  // MD003/heading-style: Use ATX-style headings (##)
+  // Note: This is opinionated since "consistent" doesn't work well with mixed setext/atx
+  "MD003": {
+    "style": "atx"
+  },
+
+  // MD004/ul-style: Enforce consistent unordered list marker style
+  // The first marker found sets the style for the document
+  "MD004": {
+    "style": "consistent"
+  },
+
+  // MD007/ul-indent: Use 2-space indentation for nested lists
+  // Note: This enforces 2 spaces for list indentation, matching our style guide
+  "MD007": {
+    "indent": 2,
+    "start_indent": 2,
+    "start_indented": false
+  },
+
+  // MD010/no-hard-tabs: Configure tab handling in code blocks
+  "MD010": {
+    "code_blocks": true, // Check code blocks for tabs
+    "ignore_code_languages": [], // Don't ignore any languages
+    "spaces_per_tab": 4 // Assume 4 spaces per tab for column calculations
+  },
+
+  // MD012/no-multiple-blanks: Enforce consistent blank line usage
+  "MD012": {
+    "maximum": 1
+  },
+
+  // MD013/line-length: Disable line length restrictions
+  // Teams can override this if they want line length enforcement
+  "MD013": false,
+
+  // MD014/commands-show-output: Allow $ before commands without output
+  "MD014": false,
+
+  // MD022/blanks-around-headings: Require blank lines around headings
+  "MD022": {
+    "lines_above": 1,
+    "lines_below": 1
+  },
+
+  // MD024/no-duplicate-heading: Allow duplicate headings in different sections
+  "MD024": {
+    "siblings_only": true
+  },
+
+  // MD025/single-title: Ensure single top-level heading
+  // Allow front matter title to count as the top-level heading
+  "MD025": {
+    "front_matter_title": "^\\s*title\\s*[:=]",
+    "level": 1
+  },
+
+  // MD026/no-trailing-punctuation: Disallow trailing punctuation in headings
+  "MD026": {
+    "punctuation": ".,;:!。,;:!"
+  },
+
+  // MD029/ol-prefix: Allow consistent ordered list prefixes
+  "MD029": {
+    "style": "one_or_ordered"
+  },
+
+  // MD030/list-marker-space: Require consistent spacing after list markers
+  "MD030": {
+    "ol_multi": 1,
+    "ol_single": 1,
+    "ul_multi": 1,
+    "ul_single": 1
+  },
+
+  // MD031/blanks-around-fences: Require blank lines around fenced code blocks
+  "MD031": {
+    "list_items": true
+  },
+
+  // MD032/blanks-around-lists: Require blank lines around lists
+  "MD032": {
+    "list_items": true
+  },
+
+  // MD035/hr-style: Enforce consistent horizontal rule style
+  // The first HR found sets the style for the document
+  "MD035": {
+    "style": "consistent"
+  },
+
+  // MD044/proper-names: Disable by default (enable per-project if needed)
+  "MD044": false,
+
+  // MD046/code-block-style: Enforce consistent code block style
+  // The first code block found sets the style for the document
+  "MD046": {
+    "style": "consistent"
+  },
+
+  // MD048/code-fence-style: Enforce consistent code fence style (backtick vs tilde)
+  // The first fence found sets the style for the document
+  "MD048": {
+    "style": "consistent"
+  },
+
+  // MD049/emphasis-style: Enforce consistent emphasis style (* vs _)
+  // The first emphasis found sets the style for the document
+  "MD049": {
+    "style": "consistent"
+  },
+
+  // MD050/strong-style: Enforce consistent strong style (** vs __)
+  // The first strong found sets the style for the document
+  "MD050": {
+    "style": "consistent"
+  }
+}

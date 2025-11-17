@@ -1,0 +1,92 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+
+  // Enable all rules by default, then configure specific ones
+  "default": true,
+
+  // MD003/heading-style: Use ATX-style headings (##) for consistency
+  "MD003": {
+    "style": "atx"
+  },
+
+  // MD004/ul-style: Use dash (-) for unordered lists for consistency
+  "MD004": {
+    "style": "dash"
+  },
+
+  // MD007/ul-indent: Use 2-space indentation for nested lists
+  "MD007": {
+    "indent": 2,
+    "start_indent": 2,
+    "start_indented": false
+  },
+
+  // MD013/line-length: Enforce 80-character line length for readability
+  "MD013": {
+    "code_block_line_length": 80,
+    "code_blocks": true,
+    "heading_line_length": 80,
+    "headings": true,
+    "line_length": 80,
+    "stern": false,
+    "strict": false,
+    "tables": true // Even tables must fit within 80 characters
+  },
+
+  // MD014/commands-show-output: Allow $ before commands without showing output
+  // (common in documentation to indicate shell commands)
+  "MD014": false,
+
+  // MD024/no-duplicate-heading: Allow duplicate headings in different sections
+  "MD024": {
+    "siblings_only": true
+  },
+
+  // MD029/ol-prefix: Allow either "1." for all items or sequential numbering
+  // (both styles are readable; "1." is preferred for long lists)
+  "MD029": {
+    "style": "one_or_ordered"
+  },
+
+  // MD030/list-marker-space: Require exactly 1 space after list markers
+  "MD030": {
+    "ol_multi": 1,
+    "ol_single": 1,
+    "ul_multi": 1,
+    "ul_single": 1
+  },
+
+  // MD035/hr-style: Use "---" for horizontal rules
+  "MD035": {
+    "style": "---"
+  },
+
+  // MD040/fenced-code-language: Require language specification for code blocks
+  "MD040": {
+    "allowed_languages": [], // Allow any language
+    "language_only": false // Allow info strings beyond just language
+  },
+
+  // MD044/proper-names: Disable by default (projects can enable with specific terms)
+  "MD044": false,
+
+  // MD046/code-block-style: Use fenced code blocks (```) instead of indented
+  "MD046": {
+    "style": "fenced"
+  },
+
+  // MD048/code-fence-style: Use backticks (```) for code fences
+  "MD048": {
+    "style": "backtick"
+  },
+
+  // MD049/emphasis-style: Use asterisks (*) for emphasis/italics
+  "MD049": {
+    "style": "asterisk"
+  },
+
+  // MD050/strong-style: Use asterisks (**) for strong/bold
+  "MD050": {
+    "style": "asterisk"
+  }
+}
