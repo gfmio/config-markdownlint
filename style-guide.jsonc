@@ -57,8 +57,9 @@
   },
 
   // MD025/single-title: Ensure single top-level heading
+  // Allow front matter title to count as the top-level heading
   "MD025": {
-    "front_matter_title": "",
+    "front_matter_title": "^\\s*title\\s*[:=]",
     "level": 1
   },
 
