@@ -115,6 +115,7 @@ Balanced configuration for documentation projects:
 
    ```bash
    npm install --save-dev markdownlint-cli2
+
 ### With VS Code Extension
 
 1. **Install the extension:** [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
@@ -123,6 +124,7 @@ Balanced configuration for documentation projects:
 
    ```bash
    npm install --save-dev @gfmio/config-markdownlint
+
 Or reference a config file:
 
 ```json
