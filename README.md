@@ -167,7 +167,7 @@ And create `.markdownlint.jsonc` in your project root:
 You can also copy any configuration file directly to your project:
 
 ```bash
-cp strict.jsonc .markdownlint.jsonc
+cp /path/to/config-markdownlint/strict.jsonc /path/to/your/project/.markdownlint.jsonc
 ```
 
 ## Extending Configurations
